@@ -1,3 +1,29 @@
+/* 
+    Modal component
+*/
+Vue.component('Modal', {
+    template: `
+      <div class="modal-mask" v-if="isOpen">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <h3>{{ title }}</h3>
+            <div>
+                <slot></slot>
+            </div>
+            <footer>
+              <button v-on:click="close">Cerrar</button>
+            </footer>
+          </div>
+        </div>
+      </div>`,
+    props: ['title', 'isOpen'],
+    methods: {
+        close(){
+            this.$emit('close-modal');
+        }
+    }
+});
+
 /*
     Child component to manage the form
 */
@@ -77,7 +103,7 @@ Vue.component('ItemList', {
     Main component for list and form interaction
 */
 Vue.component('Tracker', {
-    template: /*html*/`
+    template: `
         <div>
             <h1>
                 {{title}} que me gustan
@@ -88,6 +114,14 @@ Vue.component('Tracker', {
                 Llevo <strong>{{ totalTime }}</strong> horas invertidas total.
             </p>
             <img v-bind:src="reactionImageSrc" alt="reaction">
+                    
+            <!-- modal the we will show to congratulate the user in case he invested many hours -->
+            <modal 
+                title="Felicidades" 
+                v-on:close-modal="closeModal"
+                v-bind:is-open="isModalOpen">
+                Invertiste {{ totalTime }} horas en {{ topic }}, descanza un poco.
+            </modal>
             <slot></slot>
         </div>
     `,
@@ -98,6 +132,7 @@ Vue.component('Tracker', {
     data() {
         return {
             list: [],
+            isModalOpen: false,
             totalTime: 0
         }
     },
@@ -119,6 +154,11 @@ Vue.component('Tracker', {
     watch: {
         list() {
             this.totalTime = this.list.reduce(((acumulated, current) => acumulated + current.hours), 0);
+        },
+        totalTime() {
+            if(this.totalTime > 50){
+                this.isModalOpen = true;
+            }
         }
     },
     methods: {
@@ -128,9 +168,12 @@ Vue.component('Tracker', {
                 name: newItem.name,
                 hours: parseInt(newItem.hours, 10)
             });
+        },
+        closeModal(){
+            this.isModalOpen = false;
         }
     }
-})
+});
 
 /* 
     Main application component
@@ -148,25 +191,33 @@ var app = new Vue({
                 {
                     name: 'anime',
                     key: 'anime'
-                },
-                {
-                    name: 'musica',
-                    key: 'music'
-                },
-                {
-                    name: 'pelicula',
-                    key: 'movies'
-                },
-                {
-                    name: 'serie',
-                    key: 'series'
-                },
-                {
-                    name: 'programa',
-                    key: 'program'
                 }
             ]
         }
+    },
+    beforeCreate() {
+        console.log('beforeCreate()');
+    },
+    created() {
+        console.log('created()');
+    },
+    beforeMount() {
+        console.log('beforeMount()');
+    },
+    mounted() {
+        console.log('mounted()');
+    },
+    beforeDestroy() {
+        console.log('beforeDestroy()');
+    },
+    destroyed() {
+        console.log('destroyed()');
+    },
+    beforeUpdate() {
+        console.log('beforeUpdate()');
+    },
+    updated() {
+        console.log('updated()');
     },
     computed: {
         // to render the trackers we need 2 images, one that will be shown if tracker is empty and other when the tracker has something in the list
