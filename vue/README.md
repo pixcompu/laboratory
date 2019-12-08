@@ -17,7 +17,7 @@ Once docker compose is up you can have access to the following applications
 
 ## Main application (localhost:4000/docker-lab)
 In this we implement a multi-purpose generic tracker with components using Vue.js.
-![image](https://user-images.githubusercontent.com/11744752/70383851-cc068b80-193a-11ea-8662-3cb67d909f21.png)
+![image](https://user-images.githubusercontent.com/11744752/70384092-fe19ec80-193e-11ea-9ab0-bb06ec2971a6.png)
 
 # Author
 Felix Diaz (pixcompu)
