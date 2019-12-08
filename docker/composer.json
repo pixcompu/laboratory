@@ -1,0 +1,8 @@
+
+{
+    "name": "root/app",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.8",
+        "robmorgan/phinx": "^0.10.8"
+    }
+}

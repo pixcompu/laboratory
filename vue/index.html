@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Vue Experiment</title>
+    <!-- main application style -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- main vue application -->
+    <div id="app">
+        <!-- render a tracker for each element in opur tracker list -->
+        <tracker
+            v-for="(tracker, i) in trackers"
+            :key="i"
+            v-bind:topic="tracker.topic"
+            v-bind:happy-img-src="tracker.happy"
+            v-bind:sad-img-src="tracker.sad">
+            <hr/>
+        </tracker>
+    </div>
+    <!-- dependencies -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- main application script -->
+    <script src="app.js"></script>
+</body>
+
+</html>

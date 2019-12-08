@@ -1,0 +1,3 @@
+CREATE DATABASE dockerlab;
+CREATE USER dockerlab WITH PASSWORD 'kingdom';
+GRANT ALL PRIVILEGES ON DATABASE dockerlab TO dockerlab;
