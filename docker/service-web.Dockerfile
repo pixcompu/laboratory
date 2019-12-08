@@ -1,8 +1,11 @@
 # choose base container
 FROM php:7.2-apache
 
+# update package tree
+RUN apt-get update 
+
 # install libraries to support gd extension
-RUN apt-get update && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev
+RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev
 
 # install linux zip util so composer uses when unziping dependencies
 RUN apt-get install -y zip

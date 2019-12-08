@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cli:
+    build:
+      context: .
+      dockerfile: service-cli.Dockerfile
+    container_name: trackercli
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    volumes:
+    - .:/usr/src/tracker

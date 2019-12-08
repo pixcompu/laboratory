@@ -12,6 +12,24 @@
 docker-compose up
 ```
 
+### Compiles and hot-reloads for development
+```
+docker exec trackercli npm run serve
+```
+
+### Compiles and minifies for production
+```
+docker exec trackercli npm run build
+```
+
+### Lints and fixes files
+```
+docker exec trackercli npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 # Execute application
 Once docker compose is up you can have access to the following applications
 
@@ -24,6 +42,3 @@ Felix Diaz (pixcompu)
 
 
 Have fun!
-
-
-
