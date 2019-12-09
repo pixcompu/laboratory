@@ -20,4 +20,4 @@ EXPOSE 8080
 EXPOSE 8000
 
 # run vue ui to have access to development tools from the browser!
-CMD tail -f /dev/null
+CMD vue ui --host 0.0.0.0 --port 8000
