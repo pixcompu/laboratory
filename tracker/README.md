@@ -43,9 +43,9 @@ When the project is up, it launches vue ui which is a web application to manage 
 - enjoy!
 ![image](https://user-images.githubusercontent.com/11744752/70411466-f11cfc00-1a17-11ea-880a-047150ccc8cf.png)
 
-## Main application (localhost:8000)
+## Main application (localhost:8080)
 In this we implement a multi-purpose generic tracker with components using Vue.js.
-![image](https://user-images.githubusercontent.com/11744752/70384092-fe19ec80-193e-11ea-9ab0-bb06ec2971a6.png)
+![image](https://user-images.githubusercontent.com/11744752/70416928-bf129680-1a25-11ea-9ff5-722646429fe5.png)
 
 # Author
 Felix Diaz (pixcompu)
