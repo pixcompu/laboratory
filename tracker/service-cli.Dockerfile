@@ -10,11 +10,14 @@ COPY . /usr/src/tracker
 # install vue goddies and tools for cli
 RUN npm install -g @vue/cli
 
+# install server to test dist folder
+RUN npm install -g serve
+
 # expose dev url
 EXPOSE 8080
 
-# expose vue dev url
+# expose vue ui project url
 EXPOSE 8000
 
-# keep container alive
-RUN vue ui
+# run vue ui to have access to development tools from the browser!
+CMD tail -f /dev/null
