@@ -8,7 +8,7 @@
       v-bind:happy-img-src="tracker.happy"
       v-bind:sad-img-src="tracker.sad"
     >
-      <hr/>
+      <hr />
     </tracker>
   </div>
 </template>
@@ -28,6 +28,10 @@ export default {
         {
           name: "anime",
           key: "anime"
+        },
+        {
+          name: "pelicula",
+          key: "movie"
         }
       ]
     };
