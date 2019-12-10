@@ -7,7 +7,13 @@
       <input type="number" placeholder="Horas" v-model="newItem.hours" />
     </p>
     <p>
-      <button v-bind:disabled="!enableSave" v-on:click="save">Guardar</button>
+      <button
+        class="bg-blue-500"
+        v-bind:disabled="!enableSave"
+        v-on:click="save"
+      >
+        Guardar
+      </button>
     </p>
   </div>
 </template>
@@ -45,4 +51,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style></style>

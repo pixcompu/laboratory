@@ -10,3 +10,6 @@ services:
       - "8000:8000"
     volumes:
     - .:/usr/src/tracker
+    environment:
+    # especific environment variable to enable hot reloading
+      - CHOKIDAR_USEPOLLING=true
