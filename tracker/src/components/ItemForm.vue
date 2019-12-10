@@ -1,20 +1,41 @@
 <template>
-  <div>
-    <p>
-      <input type="text" placeholder="Nombre" v-model="newItem.name" />
-    </p>
-    <p>
-      <input type="number" placeholder="Horas" v-model="newItem.hours" />
-    </p>
-    <p>
-      <button
-        class="bg-blue-500"
-        v-bind:disabled="!enableSave"
-        v-on:click="save"
-      >
-        Guardar
-      </button>
-    </p>
+  <div class="w-full max-w-xs">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+          Nombre
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name"
+          type="text"
+          placeholder="Nombre"
+          v-model="newItem.name"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="hours">
+          Horas
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="hours"
+          type="number"
+          placeholder="Horas"
+          v-model="newItem.hours"
+        />
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="button"
+          v-bind:disabled="!enableSave"
+          v-on:click="save"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 

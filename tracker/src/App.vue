@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container center">
     <!-- render a tracker for each element in opur tracker list -->
     <tracker
       v-for="(tracker, i) in trackers"

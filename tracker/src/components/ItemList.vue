@@ -1,13 +1,30 @@
 <template>
   <div>
-    <div v-show="items.length > 0">
+    <div class="container" v-show="items.length > 0">
       <h3>Lista de {{ title }}</h3>
-      <ol>
-        <li v-for="(item, i) in items" :key="i">
-          {{ item.name }} ({{ item.hours }} horas)
-          <button v-on:click="deleteItem">X</button>
-        </li>
-      </ol>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th class="px-4 py-2">Nombre</th>
+            <th class="px-4 py-2">Horas</th>
+            <th class="px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, i) in items" :key="i">
+            <td class="border px-4 py-2">{{ item.name }}</td>
+            <td class="border px-4 py-2">{{ item.hours }}</td>
+            <td class="border px-4 py-2">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                v-on:click="deleteItem(i)"
+              >
+                X
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>

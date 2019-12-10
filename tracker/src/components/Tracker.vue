@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h1>{{ title }} que me gustan</h1>
+  <div class="container">
+    <h1 class="font-semibold text-xl tracking-tight">
+      {{ title }} que me gustan
+    </h1>
     <item-form v-on:add-item="save"></item-form>
     <item-list v-bind:items="list" v-bind:topic="topic"></item-list>
     <p>
