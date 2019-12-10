@@ -13,6 +13,9 @@ RUN npm install -g @vue/cli
 # install server to test dist folder
 RUN npm install -g serve
 
+# install project libraries
+RUN npm install
+
 # expose dev url
 EXPOSE 8080
 
